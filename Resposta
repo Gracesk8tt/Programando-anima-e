@@ -1,0 +1,20 @@
+function solucao(velocidade, pulando, atacando) {
+   if (atacando) {
+        console.log("ATACANDO");
+    } else if (!pulando && velocidade === 0) {
+        console.log("PARADO");
+    } else if (!pulando && velocidade <= 30) {
+        console.log("ANDANDO");
+    } else if (!pulando && velocidade > 30) {
+        console.log("CORRENDO");
+    } else if (pulando) {
+        console.log("PULANDO");
+    }
+}
+function processData(input) {
+    let [velocidade, pulando, atacando] = input.trim().split("\n");
+  	velocidade = Number(velocidade);
+  	pulando = pulando === "true";
+  	atacando = atacando === "true";
+    solucao(velocidade, pulando, atacando);
+} 
